@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      - PORT=4000
+    ports:
+      - "4000:4000"
+
+  python_service:
+    build: ./python_service
+    ports:
+      - "8000:8000"
+
+  # Frontend can be run locally via npm scripts; Next.js is typically deployed separately (e.g. Vercel).
